@@ -1,10 +1,18 @@
 function MotivationalBanner() {
   return (
-    <div className="mt-12 flex items-center justify-center rounded-xl bg-primary/20 dark:bg-primary/30 p-8 text-center">
-      <p className="text-lg font-bold text-text-light dark:text-text-dark">You&apos;re doing amazing! Keep creating stories ✨</p>
-    </div>
+    <section className="motivation card">
+      <div className="motivation__content">
+        <h3>Share your next tale with the world</h3>
+        <p>
+          Every story you craft inspires a new adventure. Keep the momentum
+          going and let your imagination lead the way.
+        </p>
+      </div>
+      <button type="button" className="motivation__button">
+        Create New Story
+      </button>
+    </section>
   );
 }
 
 export default MotivationalBanner;
-

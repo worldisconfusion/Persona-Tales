@@ -1,0 +1,10 @@
+# Copy this file and rename it to .env in the server directory
+# Then fill in your actual values
+
+PORT=4000
+MONGODB_URL=mongodb://localhost:27017/ai-story-generator
+JWT_SECRET=your_jwt_secret_key_here
+CLOUD_NAME=your_cloudinary_cloud_name
+API_KEY=your_cloudinary_api_key
+API_SECRET=your_cloudinary_api_secret
+

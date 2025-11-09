@@ -1,47 +1,47 @@
-import Header from './Header';
-import ProfileCard from './ProfileCard';
-import StoryStatistics from './StoryStatistics';
-import Certificates from './Certificates';
-import RecentStories from './RecentStories';
-import MotivationalBanner from './MotivationalBanner';
+import { useMemo } from "react";
+import { useSelector } from "react-redux";
+
+import Header from "./Header";
+import ProfileCard from "./ProfileCard";
+import StoryStatistics from "./StoryStatistics";
+import Certificates from "./Certificates";
+import RecentStories from "./RecentStories";
+import MotivationalBanner from "./MotivationalBanner";
 
 function Dashboard() {
+  const { user } = useSelector((state) => state.profile);
+
+  const greeting = useMemo(() => {
+    const hour = new Date().getHours();
+    if (hour < 12) return "Good morning";
+    if (hour < 18) return "Good afternoon";
+    return "Good evening";
+  }, []);
+
+  const avatarUrl = useMemo(() => {
+    if (user?.image) return user.image;
+    const seed = [user?.firstName, user?.lastName].filter(Boolean).join(" ");
+    return `https://api.dicebear.com/5.x/initials/svg?seed=${seed || "Story Teller"}`;
+  }, [user]);
+
   return (
-    <div className="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-      <div className="layout-container flex h-full grow flex-col">
-        <Header />
-        
-        <main className="px-4 sm:px-6 lg:px-10 py-8">
-          <div className="layout-content-container flex flex-col mx-auto max-w-7xl">
-            {/* PageHeading */}
-            <div className="flex flex-wrap justify-between gap-3 p-4 mb-6">
-              <div className="flex min-w-72 flex-col gap-3">
-                <p className="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em]">Welcome back, Alex!</p>
-                <p className="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">Ready to create a new adventure?</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {/* Left Column */}
-              <div className="lg:col-span-1 flex flex-col gap-8">
-                <ProfileCard />
-                <StoryStatistics />
-              </div>
-
-              {/* Right Column */}
-              <div className="lg:col-span-2 flex flex-col gap-8">
-                <Certificates />
-                <RecentStories />
-              </div>
-            </div>
-
-            <MotivationalBanner />
+    <div className="dashboard">
+      <div className="dashboard__container">
+        <Header user={user} greeting={greeting} avatarUrl={avatarUrl} />
+        <div className="dashboard__grid">
+          <div className="dashboard__column">
+            <ProfileCard user={user} avatarUrl={avatarUrl} />
+            <StoryStatistics />
           </div>
-        </main>
+          <div className="dashboard__column dashboard__column--wide">
+            <Certificates />
+            <RecentStories />
+          </div>
+        </div>
+        <MotivationalBanner />
       </div>
     </div>
   );
 }
 
 export default Dashboard;
-
