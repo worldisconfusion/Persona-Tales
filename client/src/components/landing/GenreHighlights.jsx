@@ -1,3 +1,5 @@
+import "./landing.css";
+
 const genres = [
   { id: 1, name: "Adventure", icon: "explore" },
   { id: 2, name: "Nature Care", icon: "park" },
@@ -13,21 +15,21 @@ const genres = [
 
 export default function GenreHighlights() {
   return (
-    <div className="py-16">
-      <h2 className="text-[#1d140c] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-8 pt-5 text-center">
+    <div className="landing-genres">
+      <h2 className="landing-genres__title">
         Choose Your Adventure 🎨
       </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <div className="landing-genres__grid">
         {genres.map((genre) => (
           <div 
             key={genre.id}
-            className="flex flex-col items-center gap-3 text-center p-4 rounded-lg bg-cream/50 dark:bg-background-dark/50 hover:shadow-soft transition-shadow cursor-pointer"
+            className="landing-genres__item"
           >
-            <div className="w-16 h-16 rounded-full bg-white dark:bg-gray-700 flex items-center justify-center text-primary text-3xl">
+            <div className="landing-genres__icon">
               <span className="material-symbols-outlined">{genre.icon}</span>
             </div>
             <div>
-              <p className="text-[#1d140c] dark:text-gray-200 text-sm font-medium leading-normal">
+              <p className="landing-genres__name">
                 {genre.name}
               </p>
             </div>

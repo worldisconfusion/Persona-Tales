@@ -1,3 +1,5 @@
+import "./landing.css";
+
 const features = [
   {
     id: 1,
@@ -27,23 +29,23 @@ const features = [
 
 export default function WhatMakesUsSpecial() {
   return (
-    <div className="py-16">
-      <h2 className="text-[#1d140c] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-8 pt-5 text-center">
+    <div className="landing-features">
+      <h2 className="landing-features__title">
         What Makes Us Special
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="landing-features__grid">
         {features.map((feature) => (
           <div 
             key={feature.id}
-            className="p-6 rounded-lg bg-white dark:bg-background-dark/50 shadow-soft flex flex-col items-start gap-4"
+            className="landing-features__item"
           >
-            <div className="p-3 rounded-full bg-primary/10 text-primary text-3xl">
+            <div className="landing-features__icon">
               <span className="material-symbols-outlined">{feature.icon}</span>
             </div>
-            <h3 className="font-bold text-lg text-[#1d140c] dark:text-white">
+            <h3 className="landing-features__item-title">
               {feature.title}
             </h3>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
+            <p className="landing-features__item-description">
               {feature.description}
             </p>
           </div>
