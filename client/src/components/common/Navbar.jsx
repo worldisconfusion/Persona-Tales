@@ -5,8 +5,9 @@ import ProfileDropdown from "../core/ProfileDropdown";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Stories", path: "/stories", disabled: true },
-  { label: "Certificates", path: "/certificates", disabled: true },
+  { label: "Stories", path: "/dashboard#stories" },
+  { label: "Certificates", path: "/dashboard#certificates" },
+  { label: "Genres", path: "/#genres" },
 ];
 
 export default function Navbar() {
@@ -26,7 +27,7 @@ export default function Navbar() {
       <div className="navbar__content">
         <Link to="/" className="navbar__brand">
           <div className="navbar__brand-icon">
-          <span className="material-symbols-outlined">auto_stories</span>
+            <span className="material-symbols-outlined">auto_stories</span>
           </div>
           <span className="navbar__brand-text">Persona Tales</span>
         </Link>
@@ -36,10 +37,13 @@ export default function Navbar() {
             <button
               key={link.path}
               className={`navbar__link ${
-                location.pathname === link.path ? "navbar__link--active" : ""
+                location.pathname === link.path.split("#")[0]
+                  ? "navbar__link--active"
+                  : ""
               } ${link.disabled ? "navbar__link--disabled" : ""}`}
               onClick={() => !link.disabled && navigate(link.path)}
               disabled={link.disabled}
+              title={link.title || ""}
             >
               {link.label}
             </button>
@@ -77,4 +81,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

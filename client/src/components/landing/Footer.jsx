@@ -16,12 +16,6 @@ export default function Footer() {
               className="landing-footer__link" 
               href="#"
             >
-              About
-            </a>
-            <a 
-              className="landing-footer__link" 
-              href="#"
-            >
               FAQ
             </a>
             <a 

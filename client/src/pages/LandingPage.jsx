@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import HeroSection from "../components/landing/HeroSection";
 import PromptInputSection from "../components/landing/PromptInputSection";
 import GenreHighlights from "../components/landing/GenreHighlights";
@@ -14,6 +15,16 @@ export default function LandingPage() {
   const [generatedStory, setGeneratedStory] = useState(null);
   const [storyId, setStoryId] = useState(null);
   const [showAudioSection, setShowAudioSection] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   const handleGenreSelect = (genre) => {
     setSelectedGenre(genre);
@@ -24,7 +35,7 @@ export default function LandingPage() {
     setGeneratedStory(result.story);
     setStoryId(result.storyId);
     setShowAudioSection(false); // Reset audio section when new story is generated
-    
+
     // Scroll to the generated story section
     setTimeout(() => {
       const storySection = document.querySelector(".story-display");
@@ -36,7 +47,7 @@ export default function LandingPage() {
 
   const handleUseForAudio = () => {
     setShowAudioSection(true);
-    
+
     // Scroll to audio section
     setTimeout(() => {
       const audioSection = document.querySelector(".audio-clone");
@@ -53,15 +64,17 @@ export default function LandingPage() {
           <div className="landing-layout-flex">
             <div className="landing-layout-content">
               <HeroSection />
-              <PromptInputSection 
+              <PromptInputSection
                 selectedGenre={selectedGenre}
-                onStoryGenerated={handleStoryGenerated} 
+                onStoryGenerated={handleStoryGenerated}
               />
-              <GenreHighlights 
-                selectedGenre={selectedGenre}
-                onGenreSelect={handleGenreSelect}
-              />
-              
+              <div id="genres">
+                <GenreHighlights
+                  selectedGenre={selectedGenre}
+                  onGenreSelect={handleGenreSelect}
+                />
+              </div>
+
               {/* Display Generated Story - Between GenreHighlights and WhatMakesUsSpecial */}
               {generatedStory && (
                 <div style={{ margin: "60px 0" }}>
@@ -71,14 +84,17 @@ export default function LandingPage() {
                   />
                 </div>
               )}
-              
+
               {/* Audio Clone Section */}
               {showAudioSection && generatedStory && (
                 <div style={{ margin: "60px 0" }}>
-                  <AudioCloneSection storyText={generatedStory} storyId={storyId} />
+                  <AudioCloneSection
+                    storyText={generatedStory}
+                    storyId={storyId}
+                  />
                 </div>
               )}
-              
+
               <WhatMakesUsSpecial />
               <HowItWorks />
             </div>
@@ -89,4 +105,3 @@ export default function LandingPage() {
     </div>
   );
 }
-

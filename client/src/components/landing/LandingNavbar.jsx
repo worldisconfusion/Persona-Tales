@@ -38,13 +38,7 @@ export default function LandingNavbar() {
               </a>
               <a 
                 className="landing-navbar__link" 
-                href="#"
-              >
-                About
-              </a>
-              <a 
-                className="landing-navbar__link" 
-                href="#"
+                href="#genres"
               >
                 Genres
               </a>

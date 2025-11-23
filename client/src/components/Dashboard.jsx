@@ -21,7 +21,9 @@ function Dashboard() {
   const avatarUrl = useMemo(() => {
     if (user?.image) return user.image;
     const seed = [user?.firstName, user?.lastName].filter(Boolean).join(" ");
-    return `https://api.dicebear.com/5.x/initials/svg?seed=${seed || "Story Teller"}`;
+    return `https://api.dicebear.com/5.x/initials/svg?seed=${
+      seed || "Story Teller"
+    }`;
   }, [user]);
 
   return (
@@ -34,8 +36,12 @@ function Dashboard() {
             <StoryStatistics />
           </div>
           <div className="dashboard__column dashboard__column--wide">
-            <Certificates />
-            <RecentStories />
+            <div id="certificates">
+              <Certificates />
+            </div>
+            <div id="stories">
+              <RecentStories />
+            </div>
           </div>
         </div>
         <MotivationalBanner />
