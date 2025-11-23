@@ -26,9 +26,9 @@ export default function Navbar() {
       <div className="navbar__content">
         <Link to="/" className="navbar__brand">
           <div className="navbar__brand-icon">
-            <span className="navbar__brand-initials">AI</span>
+          <span className="material-symbols-outlined">auto_stories</span>
           </div>
-          <span className="navbar__brand-text">AI Story Generator</span>
+          <span className="navbar__brand-text">Persona Tales</span>
         </Link>
 
         <div className="navbar__links">

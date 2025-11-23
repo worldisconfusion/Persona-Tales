@@ -63,7 +63,7 @@ export default function Signup() {
       <div className="auth__card">
         <div className="auth__header">
           <h1>Create your adventure account</h1>
-          <p>Join AI Story Generator and craft magical stories in seconds.</p>
+          <p>Join Persona Tales and craft magical stories in seconds.</p>
         </div>
 
         <form className="auth__form" onSubmit={handleSubmit}>
@@ -184,7 +184,7 @@ export default function Signup() {
       <div className="auth__illustration auth__illustration--signup">
         <div className="auth__illustration-card">
           <h3>Shape your universe</h3>
-          <p>Build characters, worlds, and unforgettable adventures.</p>
+          <p>Build characters, worlds, and unforgettable stories.</p>
         </div>
       </div>
     </section>

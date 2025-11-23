@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="landing-footer__brand-icon">
               <span className="material-symbols-outlined">auto_stories</span>
             </div>
-            <h2 className="landing-footer__brand-text">My Story World</h2>
+            <h2 className="landing-footer__brand-text">Persona Tales</h2>
           </div>
           <div className="landing-footer__links">
             <a 
@@ -32,7 +32,7 @@ export default function Footer() {
             </a>
           </div>
           <p className="landing-footer__copyright">
-            © 2024 My Story World. All rights reserved.
+            © 2025 Persona Tales. All rights reserved.
           </p>
         </div>
       </div>

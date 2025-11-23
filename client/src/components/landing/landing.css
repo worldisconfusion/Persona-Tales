@@ -123,7 +123,16 @@
 
 .landing-navbar__actions {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.landing-navbar__welcome {
+  font-weight: 600;
+  color: #1d140c;
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  margin-right: 0.5rem;
 }
 
 .landing-navbar__button {

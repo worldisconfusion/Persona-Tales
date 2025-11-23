@@ -1,8 +1,19 @@
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../services/operations/authAPI";
+import ProfileDropdown from "../core/ProfileDropdown";
 import "./landing.css";
 
 export default function LandingNavbar() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { token } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.profile);
+
+  const handleLogout = () => {
+    dispatch(logout(navigate));
+  };
 
   return (
     <header className="landing-navbar">
@@ -13,7 +24,7 @@ export default function LandingNavbar() {
               <span className="material-symbols-outlined">auto_stories</span>
             </div>
             <h2 className="landing-navbar__brand-title">
-              My Story World
+              Persona Tales
             </h2>
           </div>
           
@@ -39,18 +50,29 @@ export default function LandingNavbar() {
               </a>
             </div>
             <div className="landing-navbar__actions">
-              <button 
-                className="landing-navbar__button landing-navbar__button--login"
-                onClick={() => navigate("/login")}
-              >
-                <span>Login</span>
-              </button>
-              <button 
-                className="landing-navbar__button landing-navbar__button--signup"
-                onClick={() => navigate("/signup")}
-              >
-                <span>Sign Up</span>
-              </button>
+              {!token ? (
+                <>
+                  <button 
+                    className="landing-navbar__button landing-navbar__button--login"
+                    onClick={() => navigate("/login")}
+                  >
+                    <span>Login</span>
+                  </button>
+                  <button 
+                    className="landing-navbar__button landing-navbar__button--signup"
+                    onClick={() => navigate("/signup")}
+                  >
+                    <span>Sign Up</span>
+                  </button>
+                </>
+              ) : (
+                <>
+                  <span className="landing-navbar__welcome">
+                    {user ? `Hi, ${user.firstName}` : "Welcome"}
+                  </span>
+                  <ProfileDropdown onLogout={handleLogout} />
+                </>
+              )}
             </div>
           </div>
           
