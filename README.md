@@ -847,9 +847,6 @@ This project was developed by:
 - **[Vishwas Mishra](https://github.com/CyberMage7)**
 - **[Satwik Pandey](https://github.com/worldisconfusion)**
 
-## License
-
-(Add your license here)
 
 ---
 
