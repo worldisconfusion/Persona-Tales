@@ -19,23 +19,23 @@ An AI-powered story generation platform with text-to-speech capabilities. Genera
 
 ### Landing Page
 
-![Landing Page](docs/screenshots/img1.jpeg)
+![Landing Page](docs/screenshots/img5.jpeg)
 
 ### Story Generation Interface
 
-![Story Generation](docs/screenshots/img2.jpeg)
+![Story Generation](docs/screenshots/img4.jpeg)
 
-### User Dashboard
+### Generated Story
 
-![Dashboard](docs/screenshots/img3.jpeg)
+![Generated Story](docs/screenshots/img3.jpeg)
 
 ### Audio Playback & Voice Cloning
 
-![Audio Features](docs/screenshots/img4.jpeg)
+![Audio Features](docs/screenshots/img1.jpeg)
 
-### Achievements & Badges
+### Audio Cloning Interface
 
-![Achievements](docs/screenshots/img5.jpeg)
+![Audio Cloning](docs/screenshots/img2.jpeg)
 
 </div>
 
