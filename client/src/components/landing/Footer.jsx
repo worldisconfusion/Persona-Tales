@@ -12,16 +12,10 @@ export default function Footer() {
             <h2 className="landing-footer__brand-text">Persona Tales</h2>
           </div>
           <div className="landing-footer__links">
-            <a 
-              className="landing-footer__link" 
-              href="#"
-            >
+            <a className="landing-footer__link" href="#">
               FAQ
             </a>
-            <a 
-              className="landing-footer__link" 
-              href="#"
-            >
+            <a className="landing-footer__link" href="#">
               Contact
             </a>
           </div>
@@ -33,4 +27,3 @@ export default function Footer() {
     </footer>
   );
 }
-

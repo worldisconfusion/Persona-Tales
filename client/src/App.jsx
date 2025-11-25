@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import DemoPage from "./pages/DemoPage";
 import ErrorPage from "./pages/ErrorPage";
 import Navbar from "./components/common/Navbar";
 import LandingNavbar from "./components/landing/LandingNavbar";
@@ -32,23 +33,26 @@ function App() {
     }
 
     // If user tries to access login/signup while already authenticated and refresh happens
-    if (storedToken && (window.location.pathname === "/login" || window.location.pathname === "/signup")) {
+    if (
+      storedToken &&
+      (window.location.pathname === "/login" ||
+        window.location.pathname === "/signup")
+    ) {
       navigate("/dashboard");
     }
   }, [dispatch, navigate]);
 
-  // Show LandingNavbar only on landing page route
-  const showLandingNavbar = location.pathname === "/";
+  // Show LandingNavbar only on landing page and demo page routes
+  const showLandingNavbar =
+    location.pathname === "/" || location.pathname === "/demo";
 
   return (
     <div className="app">
       {showLandingNavbar ? <LandingNavbar /> : <Navbar />}
       <main className="app__content">
         <Routes>
-          <Route
-            path="/"
-            element={<LandingPage />}
-          />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/demo" element={<DemoPage />} />
           <Route
             path="/dashboard"
             element={

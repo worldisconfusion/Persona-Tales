@@ -1,18 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Persona Tales</title>
+    <title>Dream Saga</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-    <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <style>
       .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
         vertical-align: middle;
       }
     </style>
@@ -22,7 +28,7 @@
         theme: {
           extend: {
             colors: {
-              "primary": "#ff7b00",
+              primary: "#ff7b00",
               "background-light": "#f8f7f5",
               "background-dark": "#23190f",
               "card-light": "#ffffff",
@@ -31,27 +37,29 @@
               "text-dark": "#e5e5e5",
               "text-muted-light": "#9c8749",
               "text-muted-dark": "#a3a3a3",
-              "cream": "#FFF4E5",
+              cream: "#FFF4E5",
             },
             fontFamily: {
-              "display": ["Spline Sans", "sans-serif"]
+              display: ["Spline Sans", "sans-serif"],
             },
             borderRadius: {
-              "DEFAULT": "1rem",
-              "lg": "2rem",
-              "xl": "3rem",
-              "full": "9999px"
+              DEFAULT: "1rem",
+              lg: "2rem",
+              xl: "3rem",
+              full: "9999px",
             },
             boxShadow: {
-              'soft': '0 4px 14px 0 rgba(0,0,0,0.05)',
-              'soft-orange': '0 4px 14px 0 rgba(255, 123, 0, 0.1)',
-            }
+              soft: "0 4px 14px 0 rgba(0,0,0,0.05)",
+              "soft-orange": "0 4px 14px 0 rgba(255, 123, 0, 0.1)",
+            },
           },
         },
-      }
+      };
     </script>
   </head>
-  <body class="font-display bg-background-light dark:bg-background-dark text-[#1d140c] dark:text-gray-200">
+  <body
+    class="font-display bg-background-light dark:bg-background-dark text-[#1d140c] dark:text-gray-200"
+  >
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

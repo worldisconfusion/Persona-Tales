@@ -7,6 +7,7 @@ JWT_SECRET=your_jwt_secret_key_here
 CLOUD_NAME=your_cloudinary_cloud_name
 API_KEY=your_cloudinary_api_key
 API_SECRET=your_cloudinary_api_secret
+FOLDER_NAME="Yourname"
 
 # Python Services URLs
 STORY_API_URL=http://localhost:8000

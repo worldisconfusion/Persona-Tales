@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bronzeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#cd7f32;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8c5620;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="90" fill="url(#bronzeGrad)" stroke="#5c3a15" stroke-width="5" />
+  <circle cx="100" cy="100" r="75" fill="#f4a460" />
+  <path d="M100 40 L115 85 L160 85 L125 115 L135 160 L100 135 L65 160 L75 115 L40 85 L85 85 Z" fill="#ffe4b5" stroke="#8c5620" stroke-width="2" />
+  <text x="100" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#5c3a15">BEGINNER</text>
+</svg>
+
+
+
+
+

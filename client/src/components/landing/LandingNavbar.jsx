@@ -23,36 +23,34 @@ export default function LandingNavbar() {
             <div className="landing-navbar__brand-icon">
               <span className="material-symbols-outlined">auto_stories</span>
             </div>
-            <h2 className="landing-navbar__brand-title">
-              Persona Tales
-            </h2>
+            <h2 className="landing-navbar__brand-title">Persona Tales</h2>
           </div>
-          
+
           <div className="landing-navbar__links-wrapper">
             <div className="landing-navbar__links">
-              <a 
-                className="landing-navbar__link" 
-                onClick={() => navigate("/")}
-              >
+              <a className="landing-navbar__link" onClick={() => navigate("/")}>
                 Home
               </a>
-              <a 
-                className="landing-navbar__link" 
-                href="#genres"
-              >
+              <a className="landing-navbar__link" href="#genres">
                 Genres
+              </a>
+              <a
+                className="landing-navbar__link"
+                onClick={() => navigate("/demo")}
+              >
+                Demo
               </a>
             </div>
             <div className="landing-navbar__actions">
               {!token ? (
                 <>
-                  <button 
+                  <button
                     className="landing-navbar__button landing-navbar__button--login"
                     onClick={() => navigate("/login")}
                   >
                     <span>Login</span>
                   </button>
-                  <button 
+                  <button
                     className="landing-navbar__button landing-navbar__button--signup"
                     onClick={() => navigate("/signup")}
                   >
@@ -69,7 +67,7 @@ export default function LandingNavbar() {
               )}
             </div>
           </div>
-          
+
           <div className="landing-navbar__mobile-menu">
             <span className="material-symbols-outlined">menu</span>
           </div>
@@ -78,4 +76,3 @@ export default function LandingNavbar() {
     </header>
   );
 }
-

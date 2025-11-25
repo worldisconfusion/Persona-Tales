@@ -91,7 +91,7 @@ async def health():
 @app.post("/clone")
 async def clone_voice(
     text: str = Form(..., description="Text to speak"),
-    voice_file: UploadFile = File(..., description="Voice sample (WAV, 10-30 seconds)"),
+    voice_file: UploadFile = File(..., description="Voice sample (WAV, 4 -5 minutes)"),
     language: str = Form(default="en", description="Language code: en, es, fr, de, etc.")
 ):
     """
@@ -99,7 +99,7 @@ async def clone_voice(
     
     Input:
     - text: Text to convert to speech (max 5000 chars)
-    - voice_file: WAV/MP3 audio file (10-30 seconds of clear speech)
+    - voice_file: WAV/MP3 audio file (4 -5 minutes of clear speech)
     - language: Language code (default: en)
     
     Output:
@@ -143,7 +143,7 @@ async def clone_voice(
         with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as temp_output:
             temp_output_path = temp_output.name
         
-        logger.info("🎤 Generating speech (this may take 15-30 seconds)...")
+        logger.info("🎤 Generating speech (this may take 4 -5 minutes)...")
         
         # Generate cloned speech
         tts_model.tts_to_file(

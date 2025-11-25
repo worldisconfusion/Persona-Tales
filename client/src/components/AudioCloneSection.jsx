@@ -75,7 +75,7 @@ export default function AudioCloneSection({ storyText, storyId }) {
       <div className="audio-clone__header">
         <h2 className="audio-clone__title">Generate Clone Audio 🎤</h2>
         <p className="audio-clone__description">
-          Upload a voice sample (10-30 seconds) to clone the voice and narrate
+          Upload a voice sample (4 -5 minutes) to clone the voice and narrate
           your story
         </p>
       </div>
@@ -146,7 +146,7 @@ export default function AudioCloneSection({ storyText, storyId }) {
             {isLoading ? (
               <>
                 <span className="audio-clone__spinner"></span>
-                Generating Audio (this may take 15-30 seconds)...
+                Generating Audio (this may take 4 -5 minutes)...
               </>
             ) : (
               "Generate Audio"
